@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import '../App.css';
 
 class App extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			text: ''
+		}
+	}
+
 	render(){
 		return (
 			<div className="App">
@@ -13,6 +20,7 @@ class App extends Component {
 						<input
 							className="form-control"
 							placeholder="I have to..."
+							onChange={event =>this.setState({text: event.target.value})}
 						/>
 					</div>
 					<button
